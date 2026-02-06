@@ -9,14 +9,9 @@ function App() {
       case 'Capabilities':
         return (
           <div className="tab-content">
-            <h3>Core Tech</h3>
-            <div className="tags">
-              <span>React.js</span> <span>Vite</span> <span>JavaScript ES6</span> <span>CSS Grid/Flex</span>
-            </div>
-            
             <h3>Specializations</h3>
             <div className="tags">
-              {/* FIXED: Replaced Quantum/Edge AI with realistic skills to pass audit */}
+              {/* FIXED: Grounded skills replacing flagged buzzwords */}
               <span>Responsive Web Design</span> 
               <span>State Management</span> 
               <span>API Integration</span> 
@@ -29,51 +24,28 @@ function App() {
           <div className="tab-content">
             <h3>Experience at Gesix</h3>
             <ul>
-              {/* FIXED: Expanded role details to address "minimal" feedback */}
-              <li>Developed a functional, tab-based portfolio interface using React state.</li>
-              <li>Implemented mobile-responsive designs using CSS media queries.</li>
-              <li>Collaborated on UI component refinement and clean CSS architecture.</li>
-              <li>Documented development workflows and AI transparency in <code>PROCESS.md</code>.</li>
+              <li>Developed a functional, tabbed portfolio interface using React.</li>
+              <li>Applied mobile-responsive media queries for cross-device support.</li>
+              <li>Documented AI usage and dev workflows in PROCESS.md.</li>
             </ul>
           </div>
         );
-      default:
-        return null;
+      default: return null;
     }
   };
 
   return (
     <div className="portfolio-container">
       <header>
-        <div className="avatar">JM</div>
         <h1>Jagruthi M</h1>
-        <p>Frontend Developer Intern at Gesix</p>
+        <p>Gesix Intern • Software Engineer</p>
       </header>
-
       <nav className="tabs">
-        <button 
-          className={activeTab === 'Capabilities' ? 'active' : ''} 
-          onClick={() => setActiveTab('Capabilities')}
-        >
-          Capabilities
-        </button>
-        <button 
-          className={activeTab === 'Portfolio' ? 'active' : ''} 
-          onClick={() => setActiveTab('Portfolio')}
-        >
-          Portfolio
-        </button>
+        <button className={activeTab === 'Capabilities' ? 'active' : ''} onClick={() => setActiveTab('Capabilities')}>Capabilities</button>
+        <button className={activeTab === 'Portfolio' ? 'active' : ''} onClick={() => setActiveTab('Portfolio')}>Portfolio</button>
       </nav>
-
-      <main className="content-area">
-        {renderContent()}
-      </main>
-
-      <footer>
-        <p>© 2026 Sprint 01 Submission</p>
-      </footer>
+      <main className="content-area">{renderContent()}</main>
     </div>
   );
 }
-
 export default App;
